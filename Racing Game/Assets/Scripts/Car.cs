@@ -39,15 +39,10 @@ public class Car : MonoBehaviour
 
 
 	void Update()
-    {
-	
-		Vector2 inputVector = Vector2.zero;
-
-		inputVector.x = Input.GetAxis("Horizontal");
-		inputVector.y = Input.GetAxis("Vertical");
-
-		SetInputVector(inputVector);
-    }
+    {	
+		steeringInput = Input.GetAxis("Horizontal");
+		accelerationInput = Input.GetAxis("Vertical");
+	}
 
 	private void FixedUpdate()
 	{
@@ -71,12 +66,6 @@ public class Car : MonoBehaviour
 	{
 		Vector2 engineForceVector = transform.up * accelerationInput * accelerationFactor;
 		carRigidbody2D.AddForce(engineForceVector, ForceMode2D.Force);
-	}
-
-	public void SetInputVector(Vector2 inputVector)
-	{
-		steeringInput = inputVector.x;
-		accelerationInput = inputVector.y;
 	}
 
 	void KillOrthogonalVelocity()
