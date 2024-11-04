@@ -44,11 +44,14 @@ TagManager:
   - name: Background
     uniqueID: 253525819
     locked: 0
+  - name: BackObjects0
+    uniqueID: 3355832977
+    locked: 0
   - name: Road
     uniqueID: 1658930197
     locked: 0
-  - name: BackgroundObjects
-    uniqueID: 3355832977
+  - name: BackObjects1
+    uniqueID: 3975320659
     locked: 0
   - name: Finish
     uniqueID: 4209051483
