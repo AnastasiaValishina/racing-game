@@ -47,6 +47,9 @@ TagManager:
   - name: Road
     uniqueID: 1658930197
     locked: 0
+  - name: BackgroundObjects
+    uniqueID: 3355832977
+    locked: 0
   - name: Finish
     uniqueID: 4209051483
     locked: 0
