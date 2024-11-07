@@ -39,7 +39,7 @@ public class Game : MonoBehaviour
 		_mainMenu.gameObject.SetActive(true);
 	}
 
-	public void StartGame(int trackNumber)
+	public void StartGame()
 	{
 		GameStarted();
 		_timer.StartTimer();

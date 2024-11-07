@@ -1,11 +1,10 @@
-using System;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-	public void OnTrackSelected(int index)
+	public void OnStartClicked()
 	{
-		Game.Instance.StartGame(index);
+		Game.Instance.StartGame();
 		gameObject.SetActive(false);
 	}
 }
