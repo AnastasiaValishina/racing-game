@@ -9,8 +9,7 @@ public class Game : MonoBehaviour
 
 	RecordManager _recordManager;
 	Canvas _canvas;
-	Camera _mainCamera;
-
+	
 	public event Action GameStarted;
 	public event Action GameEnded;
 
@@ -35,7 +34,6 @@ public class Game : MonoBehaviour
 
 	private void Start()
 	{
-		_mainCamera = Camera.main;
 		_mainMenu.gameObject.SetActive(true);
 	}
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6345156192094183496}
   - component: {fileID: 4024665207226458730}
   - component: {fileID: 8200366129285302791}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Car
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -171,6 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30eab7c9e801a394080a22e4f510c00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationFactor: 5
-  turnFactor: 3.5
+  accelerationFactor: 3
+  turnFactor: 4.5
   driftFactor: 0.9
