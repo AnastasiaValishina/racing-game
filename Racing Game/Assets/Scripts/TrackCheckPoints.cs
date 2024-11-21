@@ -4,7 +4,7 @@ using UnityEngine;
 public class TrackCheckPoints : MonoBehaviour
 {
 	[SerializeField] CheckPoint[] checkPoints;
-	[SerializeField] Finish _finish;
+	[SerializeField] CheckPoint _finish;
 
 	int _lap = 0;
 
@@ -21,7 +21,8 @@ public class TrackCheckPoints : MonoBehaviour
         {
 			checkPoint.SetTrackCheckPoints(this);
 		}
-    }
+		_finish.SetTrackCheckPoints(this);
+	}
 
 	private void Start()
 	{
@@ -41,7 +42,8 @@ public class TrackCheckPoints : MonoBehaviour
 			{
 				_nextCheckPointIndex = 0;
 				_lap++;
-				Debug.Log(_lap);
+				
+				if (_lap >= 3) _finish.Show();
 			}
 
 			checkPoints[_nextCheckPointIndex].Show();
@@ -52,6 +54,14 @@ public class TrackCheckPoints : MonoBehaviour
 			OnWrongCheckPoint?.Invoke(this, EventArgs.Empty);
 
 			var correctCheckPoint = checkPoints[_nextCheckPointIndex];
+		}
+	}
+
+	internal void FinishTriggered()
+	{
+		if (_lap >= 3)
+		{
+			Debug.Log("game over");
 		}
 	}
 }

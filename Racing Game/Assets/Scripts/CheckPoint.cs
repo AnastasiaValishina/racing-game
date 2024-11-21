@@ -1,7 +1,9 @@
 using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
-{ 
+{
+	[SerializeField] bool isFinish;
+
 	TrackCheckPoints _trackCheckPoints;
 	SpriteRenderer _spriteRenderer;
 
@@ -17,9 +19,16 @@ public class CheckPoint : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.gameObject.tag == "Player")
+		if (isFinish)
 		{
-			_trackCheckPoints.CheckPointTriggered(this);
+			_trackCheckPoints.FinishTriggered();
+		}
+		else
+		{
+			if (collision.gameObject.tag == "Player")
+			{
+				_trackCheckPoints.CheckPointTriggered(this);
+			}
 		}
 	}
 
