@@ -7,6 +7,7 @@ public class TrackCheckPoints : MonoBehaviour
 	[SerializeField] CheckPoint _finish;
 
 	int _lap = 0;
+	const int _lapsToWin = 3;
 
 	public event EventHandler OnCorrectCheckPoint;
 	public event EventHandler OnWrongCheckPoint;
@@ -43,7 +44,7 @@ public class TrackCheckPoints : MonoBehaviour
 				_nextCheckPointIndex = 0;
 				_lap++;
 				
-				if (_lap >= 3) _finish.Show();
+				if (_lap >= _lapsToWin) _finish.Show();
 			}
 
 			checkPoints[_nextCheckPointIndex].Show();
@@ -59,7 +60,7 @@ public class TrackCheckPoints : MonoBehaviour
 
 	internal void FinishTriggered()
 	{
-		if (_lap >= 3)
+		if (_lap >= _lapsToWin)
 		{
 			Game.Instance.GameOver();
 		}
