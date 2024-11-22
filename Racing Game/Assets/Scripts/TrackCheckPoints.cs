@@ -1,10 +1,13 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 public class TrackCheckPoints : MonoBehaviour
 {
 	[SerializeField] CheckPoint[] checkPoints;
 	[SerializeField] CheckPoint _finish;
+
+	[Inject] Game _game;
 
 	int _lap = 0;
 	const int _lapsToWin = 3;
@@ -62,7 +65,7 @@ public class TrackCheckPoints : MonoBehaviour
 	{
 		if (_lap >= _lapsToWin)
 		{
-			Game.Instance.GameOver();
+			_game.GameOver();
 		}
 	}
 }

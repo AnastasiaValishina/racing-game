@@ -13,18 +13,18 @@ public class Game : MonoBehaviour
 	public event Action GameStarted;
 	public event Action GameEnded;
 
-	static Game instance;
-	public static Game Instance
-	{
-		get
-		{
-			if (instance == null)
-			{
-				instance = FindObjectOfType<Game>();
-			}
-			return instance;
-		}
-	}
+	//static Game instance;
+	//public static Game Instance
+	//{
+	//	get
+	//	{
+	//		if (instance == null)
+	//		{
+	//			instance = FindObjectOfType<Game>();
+	//		}
+	//		return instance;
+	//	}
+	//}
 
 	private void Awake()
 	{

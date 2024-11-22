@@ -1,12 +1,15 @@
 using System;
 using TMPro;
 using UnityEngine;
+using Zenject;
 
 public class ResultPopup : MonoBehaviour
 {
 	[SerializeField] TMP_Text _result;
 	[SerializeField] TMP_Text _bestResult;
 	[SerializeField] GameObject _newBest;
+
+	[Inject] Game _game;
 
 	private void Start()
 	{
@@ -26,7 +29,7 @@ public class ResultPopup : MonoBehaviour
 
 	public void OnMenuClicked()
 	{
-		Game.Instance.ShowMainMenu();
+		_game.ShowMainMenu();
 		Destroy(gameObject);
 	}
 }

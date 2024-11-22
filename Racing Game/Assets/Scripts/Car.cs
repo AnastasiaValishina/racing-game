@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 public class Car : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class Car : MonoBehaviour
 
     Rigidbody2D carRigidbody2D;
 
+	[Inject]
+	Game _game;
+
 	private void Awake()
 	{
 		carRigidbody2D = GetComponent<Rigidbody2D>();
@@ -20,8 +24,8 @@ public class Car : MonoBehaviour
 
 	private void Start()
 	{
-		Game.Instance.GameStarted += OnGameStarted;
-		Game.Instance.GameEnded += OnGameEnded;
+		_game.GameStarted += OnGameStarted;
+		_game.GameEnded += OnGameEnded;
 	}
 	private void OnGameEnded()
 	{
