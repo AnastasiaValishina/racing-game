@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 public class CheckPoint : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class CheckPoint : MonoBehaviour
 		_spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
-	public void SetTrackCheckPoints(TrackCheckPoints trackCheckPoints)
+	[Inject]
+	private void Construct(TrackCheckPoints trackCheckPoints)
 	{
 		_trackCheckPoints = trackCheckPoints;
 	}

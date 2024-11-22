@@ -20,12 +20,6 @@ public class TrackCheckPoints : MonoBehaviour
 	private void Awake()
 	{
 		_nextCheckPointIndex = 0;
-
-		foreach (var checkPoint in checkPoints)
-        {
-			checkPoint.SetTrackCheckPoints(this);
-		}
-		_finish.SetTrackCheckPoints(this);
 	}
 
 	private void Start()

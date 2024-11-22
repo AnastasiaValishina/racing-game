@@ -1,30 +1,20 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 public class Game : MonoBehaviour
 {
-	[SerializeField] Timer _timer;
 	[SerializeField] ResultPopup _resultPopupPrefab;
-	[SerializeField] MainMenu _mainMenu;
+	
+	[Inject] MainMenu _mainMenu;
+	[Inject] Timer _timer;
+	[Inject] DiContainer _diContainer;
 
 	RecordManager _recordManager;
 	Canvas _canvas;
 	
 	public event Action GameStarted;
 	public event Action GameEnded;
-
-	//static Game instance;
-	//public static Game Instance
-	//{
-	//	get
-	//	{
-	//		if (instance == null)
-	//		{
-	//			instance = FindObjectOfType<Game>();
-	//		}
-	//		return instance;
-	//	}
-	//}
 
 	private void Awake()
 	{
