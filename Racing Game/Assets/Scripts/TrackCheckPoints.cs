@@ -61,7 +61,7 @@ public class TrackCheckPoints : MonoBehaviour
 	{
 		if (_lap >= 3)
 		{
-			Debug.Log("game over");
+			Game.Instance.GameOver();
 		}
 	}
 }

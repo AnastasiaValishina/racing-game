@@ -48,6 +48,7 @@ public class Game : MonoBehaviour
 		TimeSpan newResult = _timer.StopTimer();
 
 		ResultPopup resultPopup = Instantiate(_resultPopupPrefab, _canvas.transform);
+		//resultPopup.SetResultData(newResult, );
 
 		GameEnded();
 	}

@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0.22745098}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -5343,7 +5343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timer: {fileID: 188538375}
-  _resultPopupPrefab: {fileID: 688904392084105690, guid: 180868da4a2dc3947a27635f700de036, type: 3}
+  _resultPopupPrefab: {fileID: 218786376502309289, guid: 4422adf5ebd98d34ba1a07a79f03de7b, type: 3}
   _mainMenu: {fileID: 1046779619}
 --- !u!4 &833754381
 Transform:
