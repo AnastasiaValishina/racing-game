@@ -614,7 +614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caf69286bbee4e448bf334cb5815f82e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trackCheckPoints: {fileID: 1670342906}
 --- !u!1 &86657787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3576,6 +3575,7 @@ MonoBehaviour:
   _game: {fileID: 833754380}
   _trackCheckPoints: {fileID: 1670342906}
   _timer: {fileID: 188538375}
+  _recordManager: {fileID: 833754382}
 --- !u!4 &557764786
 Transform:
   m_ObjectHideFlags: 0
@@ -5370,6 +5370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 833754381}
   - component: {fileID: 833754380}
+  - component: {fileID: 833754382}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -5405,6 +5406,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &833754382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833754378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69466d8b7fb02c14789a0cb823bbdb46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &835497071
 GameObject:
   m_ObjectHideFlags: 0
@@ -15492,12 +15505,12 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 260103949}
   - {fileID: 1441834792}
-  - {fileID: 435099595}
-  - {fileID: 1861263859}
-  - {fileID: 54759749}
-  - {fileID: 833754381}
   - {fileID: 5636689552413395352}
+  - {fileID: 435099595}
   - {fileID: 261484015}
-  - {fileID: 1670342907}
   - {fileID: 300449877}
+  - {fileID: 1670342907}
+  - {fileID: 1861263859}
+  - {fileID: 833754381}
   - {fileID: 1981349101}
+  - {fileID: 54759749}

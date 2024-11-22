@@ -3,8 +3,7 @@ using Zenject;
 
 public class MainMenu : MonoBehaviour
 {
-	[Inject]
-	Game _game;
+	[Inject] Game _game;
 
 	public void OnStartClicked()
 	{

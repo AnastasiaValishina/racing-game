@@ -1,8 +1,9 @@
 using UnityEngine;
+using Zenject;
 
 public class TrackCheckpointsUI : MonoBehaviour
 {
-	[SerializeField] TrackCheckPoints _trackCheckPoints;
+	[Inject] TrackCheckPoints _trackCheckPoints;
 
 	private void Start()
 	{
