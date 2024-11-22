@@ -12,14 +12,13 @@ public class Car : MonoBehaviour
 
     float rotationAngle = 0;
 
-    Rigidbody2D carRigidbody2D;
+    Rigidbody2D _rb;
 
-	[Inject]
-	Game _game;
+	[Inject] Game _game;
 
 	private void Awake()
 	{
-		carRigidbody2D = GetComponent<Rigidbody2D>();
+		_rb = GetComponent<Rigidbody2D>();
 	}
 
 	private void Start()
@@ -29,18 +28,13 @@ public class Car : MonoBehaviour
 	}
 	private void OnGameEnded()
 	{
-/*		SetStartPosition();
-		canMove = false;
-		rb.velocity = Vector3.zero;
-		rb.angularVelocity = 0;*/
+		SetStartPosition();
 	}
 
 	private void OnGameStarted()
 	{
-/*		SetStartPosition();
-		canMove = true;*/
+		SetStartPosition();
 	}
-
 
 	void Update()
     {	
@@ -56,27 +50,37 @@ public class Car : MonoBehaviour
 		ApplySteering();
 	}
 
+	private void SetStartPosition()
+	{
+		rotationAngle = 0;
+		_rb.velocity = Vector3.zero;
+		_rb.angularVelocity = 0;
+
+		transform.position = new Vector2(-7.6f, - 2.15f);
+		transform.eulerAngles = Vector3.zero;
+	}
+
 	private void ApplySteering()
 	{
-		float minSpeedBeforeAllowTurningfactor = carRigidbody2D.velocity.magnitude / 8;
+		float minSpeedBeforeAllowTurningfactor = _rb.velocity.magnitude / 8;
 
 		minSpeedBeforeAllowTurningfactor = Mathf.Clamp01(minSpeedBeforeAllowTurningfactor);
 
 		rotationAngle -= steeringInput * turnFactor * minSpeedBeforeAllowTurningfactor;
-		carRigidbody2D.MoveRotation(rotationAngle);
+		_rb.MoveRotation(rotationAngle);
 	}
 
 	private void ApplyEngineForce()
 	{
 		Vector2 engineForceVector = transform.up * accelerationInput * accelerationFactor;
-		carRigidbody2D.AddForce(engineForceVector, ForceMode2D.Force);
+		_rb.AddForce(engineForceVector, ForceMode2D.Force);
 	}
 
 	void KillOrthogonalVelocity()
 	{
-		Vector2 forwardVelocity = transform.up * Vector2.Dot(carRigidbody2D.velocity, transform.up);
-		Vector2 rightVelocity = transform.right * Vector2.Dot(carRigidbody2D.velocity, transform.right);
+		Vector2 forwardVelocity = transform.up * Vector2.Dot(_rb.velocity, transform.up);
+		Vector2 rightVelocity = transform.right * Vector2.Dot(_rb.velocity, transform.right);
 
-		carRigidbody2D.velocity = forwardVelocity + rightVelocity * driftFactor;
+		_rb.velocity = forwardVelocity + rightVelocity * driftFactor;
 	}
 }

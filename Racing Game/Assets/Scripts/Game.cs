@@ -24,12 +24,14 @@ public class Game : MonoBehaviour
 
 	private void Start()
 	{
+		Time.timeScale = 0;
 		_mainMenu.gameObject.SetActive(true);
 	}
 
 	public void StartGame()
 	{
 		GameStarted();
+		Time.timeScale = 1;
 		_timer.StartTimer();
 	}
 
@@ -40,6 +42,7 @@ public class Game : MonoBehaviour
 		ResultPopup resultPopup = Instantiate(_resultPopupPrefab, _canvas.transform);
 		resultPopup.SetResultData(newResult, new TimeSpan(0, 3, 0));
 
+		Time.timeScale = 0;
 		GameEnded();
 	}
 
@@ -47,6 +50,7 @@ public class Game : MonoBehaviour
 	{
 		GameEnded();
 		ShowMainMenu();
+		Time.timeScale = 0;
 	}
 
 	public void ShowMainMenu()
