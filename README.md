@@ -9,6 +9,6 @@
   <li><strong>Checkpoints</strong>.</li>
 </ul>
 
-![]([https://github.com/Your_Repository_Name/Your_GIF_Name.gif](https://github.com/AnastasiaValishina/racing-game/blob/main/Racing%20Game/Recordings/RacingGame.gif))
+![](https://github.com/AnastasiaValishina/racing-game/blob/main/Racing%20Game/Recordings/RacingGame.gif)
 
 <p>Unity version: 2022.3.40f1</p>
