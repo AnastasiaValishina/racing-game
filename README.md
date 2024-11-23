@@ -4,6 +4,7 @@
 ## 🚀 Features
 <ul>
   <li>Smooth camera handling using <strong>Cinemachine</strong>.</li>
+  <li>Dependency injection with <strong>Zenject</strong>.</li>
   <li><strong>Tilemap</strong> environments.</li>
   <li><strong>Timer</strong> to track race duration.</li>
   <li><strong>Checkpoints</strong>.</li>
