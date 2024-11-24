@@ -10,10 +10,13 @@ public class TrackCheckPoints : MonoBehaviour
 	[Inject] Game _game;
 
 	int _lap = 0;
-	const int _lapsToWin = 3;
+	private const int _lapsToWin = 3;
+	public int LapsToWin => _lapsToWin;
 
 	public event EventHandler OnCorrectCheckPoint;
 	public event EventHandler OnWrongCheckPoint;
+
+	public event Action<int> OnLapPassed;
 
 	int _nextCheckPointIndex;
 
@@ -25,6 +28,7 @@ public class TrackCheckPoints : MonoBehaviour
 	private void Start()
 	{
 		checkPoints[0].Show();
+		OnLapPassed(_lap);
 	}
 
 	public void CheckPointTriggered(CheckPoint checkPoint)
@@ -40,7 +44,8 @@ public class TrackCheckPoints : MonoBehaviour
 			{
 				_nextCheckPointIndex = 0;
 				_lap++;
-				
+				OnLapPassed(_lap);
+
 				if (_lap >= _lapsToWin) _finish.Show();
 			}
 
