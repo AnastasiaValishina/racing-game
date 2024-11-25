@@ -5,16 +5,15 @@ using Zenject;
 public class Game : MonoBehaviour
 {
 	[SerializeField] ResultPopup _resultPopupPrefab;
+	[SerializeField] Car[] _cars;
 	
-	[Inject] MainMenu _mainMenu;
+	[Inject] MainMenu _mainMenu; // to remove
 	[Inject] Timer _timer;
 	[Inject] DiContainer _diContainer;
 
 	RecordManager _recordManager;
 	Canvas _canvas;
-	
-	public event Action GameStarted;
-	public event Action GameEnded;
+	Car _car;
 
 	private void Awake()
 	{
@@ -28,9 +27,10 @@ public class Game : MonoBehaviour
 		_mainMenu.gameObject.SetActive(true);
 	}
 
-	public void StartGame()
+	public void StartGame(CarType? selectedCarType)
 	{
-		GameStarted();
+		_car = Instantiate(_cars[(int)selectedCarType]);
+		_car.Init();
 		Time.timeScale = 1;
 		_timer.StartTimer();
 	}
@@ -43,12 +43,10 @@ public class Game : MonoBehaviour
 		resultPopup.SetResultData(newResult, new TimeSpan(0, 3, 0));
 
 		Time.timeScale = 0;
-		GameEnded();
 	}
 
 	public void QuitRace()
 	{
-		GameEnded();
 		ShowMainMenu();
 		Time.timeScale = 0;
 	}

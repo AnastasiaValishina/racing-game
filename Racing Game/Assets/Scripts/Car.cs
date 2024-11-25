@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -14,24 +15,21 @@ public class Car : MonoBehaviour
 
     Rigidbody2D _rb;
 
-	[Inject] Game _game;
+	Game _game;
+
+	[Inject]
+	private void Consruct(Game game)
+	{
+		_game = game;
+		Debug.Log("Game injected");
+	}
 
 	private void Awake()
 	{
 		_rb = GetComponent<Rigidbody2D>();
 	}
 
-	private void Start()
-	{
-		_game.GameStarted += OnGameStarted;
-		_game.GameEnded += OnGameEnded;
-	}
-	private void OnGameEnded()
-	{
-		SetStartPosition();
-	}
-
-	private void OnGameStarted()
+	public void Init()
 	{
 		SetStartPosition();
 	}
