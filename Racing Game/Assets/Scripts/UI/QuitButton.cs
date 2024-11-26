@@ -3,16 +3,12 @@ using Zenject;
 
 public class QuitButton : MonoBehaviour
 {
-	Game _game;
-
-	[Inject]
-	private void Consruct(Game game)
-	{
-		_game = game;
-	}
+	[Inject] Game _game;
+	[Inject] MainMenu _mainMenu;
 
 	public void OnQuitClick()
 	{
+		_mainMenu.gameObject.SetActive(true);
 		_game.QuitRace();
 	}
 }

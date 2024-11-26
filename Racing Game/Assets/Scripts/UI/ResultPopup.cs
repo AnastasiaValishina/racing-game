@@ -10,6 +10,7 @@ public class ResultPopup : MonoBehaviour
 	[SerializeField] GameObject _newBest;
 
 	[Inject] Game _game;
+	[Inject] MainMenu _mainMenu;
 
 	private void Start()
 	{
@@ -29,7 +30,7 @@ public class ResultPopup : MonoBehaviour
 
 	public void OnMenuClicked()
 	{
-		_game.ShowMainMenu();
+		_mainMenu.gameObject.SetActive(true);
 		Destroy(gameObject);
 	}
 }

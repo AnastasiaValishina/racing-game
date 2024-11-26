@@ -6,8 +6,40 @@ using UnityEngine;
 public class RecordManager : MonoBehaviour
 {
 	Dictionary<string, long> _records = new Dictionary<string, long>();
-	string _path => Path.Combine(Application.persistentDataPath, "records.json");
+	string _path => Path.Combine(Application.persistentDataPath, "save.json");
 
+	public void UpdateBestTime(string carName, TimeSpan time)
+	{
+		LoadRecords();
+
+		long newTimeInTicks = time.Ticks;
+
+		if (_records.ContainsKey(carName))
+		{
+			if (newTimeInTicks < _records[carName])
+			{
+				_records[carName] = newTimeInTicks;
+			}
+		}
+		else
+		{
+			_records[carName] = newTimeInTicks;
+
+		}
+		SaveRecords();
+	}
+
+	public TimeSpan GetBestResult(string carName)
+	{
+		LoadRecords();
+
+		if (_records.ContainsKey(carName))
+		{
+			return TimeSpan.FromTicks(_records[carName]);
+		}
+
+		return TimeSpan.Zero;
+	}
 
 	private void LoadRecords()
 	{
@@ -34,39 +66,6 @@ public class RecordManager : MonoBehaviour
 				writer.Write(json);
 			}
 		}
-	}
-
-	public void UpdateBestTime(string trackName, TimeSpan time)
-	{
-		LoadRecords();
-
-		long newTimeInTicks = time.Ticks;
-
-		if (_records.ContainsKey(trackName))
-		{
-			if (newTimeInTicks < _records[trackName])
-			{
-				_records[trackName] = newTimeInTicks;
-			}
-		}
-		else
-		{
-			_records[trackName] = newTimeInTicks;
-
-		}
-		SaveRecords();
-	}
-
-	public TimeSpan GetBestResult(string trackName)
-	{
-		LoadRecords();
-
-		if (_records.ContainsKey(trackName))
-		{
-			return TimeSpan.FromTicks(_records[trackName]);
-		}
-
-		return TimeSpan.Zero; 
 	}
 
 	[Serializable]

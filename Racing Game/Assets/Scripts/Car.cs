@@ -1,10 +1,10 @@
 using Cinemachine;
-using System;
 using UnityEngine;
 using Zenject;
 
 public class Car : MonoBehaviour
 {
+	[SerializeField] CarType carType;
     [SerializeField] float accelerationFactor = 30.0f;
     [SerializeField] float turnFactor = 3.5f;
 	[SerializeField] float driftFactor = 0.9f;
@@ -27,6 +27,11 @@ public class Car : MonoBehaviour
 	{
 		camera.Follow = gameObject.transform;
 		SetStartPosition();
+	}
+
+	public CarType GetCarType()
+	{
+		return carType;	
 	}
 
 	void Update()

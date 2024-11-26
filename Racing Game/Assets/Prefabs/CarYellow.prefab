@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30eab7c9e801a394080a22e4f510c00d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carType: 4
   accelerationFactor: 3
   turnFactor: 4.5
   driftFactor: 0.9
