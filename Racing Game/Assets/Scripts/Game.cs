@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using UnityEngine;
 using Zenject;
@@ -10,6 +11,7 @@ public class Game : MonoBehaviour
 	[Inject] MainMenu _mainMenu; // to remove
 	[Inject] Timer _timer;
 	[Inject] DiContainer _diContainer;
+	[Inject] CinemachineVirtualCamera _camera;
 
 	RecordManager _recordManager;
 	Canvas _canvas;
@@ -30,7 +32,8 @@ public class Game : MonoBehaviour
 	public void StartGame(CarType? selectedCarType)
 	{
 		_car = Instantiate(_cars[(int)selectedCarType]);
-		_car.Init();
+		_car.Init(_camera);
+
 		Time.timeScale = 1;
 		_timer.StartTimer();
 	}

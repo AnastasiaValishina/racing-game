@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using UnityEngine;
 using Zenject;
@@ -15,22 +16,16 @@ public class Car : MonoBehaviour
 
     Rigidbody2D _rb;
 
-	Game _game;
-
-	[Inject]
-	private void Consruct(Game game)
-	{
-		_game = game;
-		Debug.Log("Game injected");
-	}
+	[Inject] Game _game;
 
 	private void Awake()
 	{
 		_rb = GetComponent<Rigidbody2D>();
 	}
 
-	public void Init()
+	public void Init(CinemachineVirtualCamera camera)
 	{
+		camera.Follow = gameObject.transform;
 		SetStartPosition();
 	}
 

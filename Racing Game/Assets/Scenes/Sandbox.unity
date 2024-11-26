@@ -333,72 +333,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 26, y: 1}
   m_EdgeRadius: 0
---- !u!1001 &54759749
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 516833601358839563, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
-      propertyPath: m_Name
-      value: Car
-      objectReference: {fileID: 0}
-    - target: {fileID: 516833601358839563, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262472591783181951, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262472591783181951, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262472591783181951, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262472591783181951, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262472591783181951, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262472591783181951, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262472591783181951, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262472591783181951, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262472591783181951, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262472591783181951, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -177.47
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
---- !u!4 &54759760 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2262472591783181951, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
-  m_PrefabInstance: {fileID: 54759749}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &55617926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,7 +1606,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 54759760}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 4
@@ -2468,7 +2402,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 236094204}
+  m_TargetGraphic: {fileID: 1816623520}
   toggleTransition: 0
   graphic: {fileID: 236094204}
   m_Group: {fileID: 844364627}
@@ -3891,6 +3825,7 @@ MonoBehaviour:
   _trackCheckPoints: {fileID: 1670342906}
   _timer: {fileID: 188538375}
   _recordManager: {fileID: 833754382}
+  _virtualCamera: {fileID: 260103948}
 --- !u!4 &557764786
 Transform:
   m_ObjectHideFlags: 0
@@ -5781,6 +5716,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _resultPopupPrefab: {fileID: 218786376502309289, guid: 4422adf5ebd98d34ba1a07a79f03de7b, type: 3}
+  _cars:
+  - {fileID: 1322675232429363678, guid: 927c7002ebb809b4f8d892732a905d4d, type: 3}
+  - {fileID: 9111258570314704730, guid: b99bb5d8a472d8b4db8eb7d7e3964741, type: 3}
+  - {fileID: 8813436170321296613, guid: 5d5444cd8230b4142bf7ef9719a9df93, type: 3}
+  - {fileID: 124609256587486556, guid: dda0dcca80046f649aa09162866a2379, type: 3}
+  - {fileID: 8200366129285302791, guid: 1abc87a6064a84bcf861cc01ee729656, type: 3}
 --- !u!4 &833754381
 Transform:
   m_ObjectHideFlags: 0
@@ -5945,7 +5886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowSwitchOff: 1
+  m_AllowSwitchOff: 0
 --- !u!1 &852250452
 GameObject:
   m_ObjectHideFlags: 0
@@ -6492,7 +6433,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1373370598}
+  m_TargetGraphic: {fileID: 137023821}
   toggleTransition: 0
   graphic: {fileID: 1373370598}
   m_Group: {fileID: 844364627}
@@ -9925,7 +9866,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 992025678}
+  m_TargetGraphic: {fileID: 675029092}
   toggleTransition: 0
   graphic: {fileID: 992025678}
   m_Group: {fileID: 844364627}
@@ -13184,7 +13125,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1518871570}
+  m_TargetGraphic: {fileID: 335427903}
   toggleTransition: 0
   graphic: {fileID: 1518871570}
   m_Group: {fileID: 844364627}
@@ -13650,7 +13591,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1667692320}
+  m_TargetGraphic: {fileID: 2106875745}
   toggleTransition: 0
   graphic: {fileID: 1667692320}
   m_Group: {fileID: 844364627}
@@ -17037,4 +16978,3 @@ SceneRoots:
   - {fileID: 1861263859}
   - {fileID: 833754381}
   - {fileID: 1981349101}
-  - {fileID: 54759749}
