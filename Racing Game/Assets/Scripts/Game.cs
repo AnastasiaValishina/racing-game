@@ -49,7 +49,7 @@ public class Game : MonoBehaviour
 
 		_recordManager.UpdateBestTime(carType, newResult);
 
-		Time.timeScale = 0;
+		QuitRace();
 	}
 
 	public void QuitRace()
