@@ -47,6 +47,11 @@ public class MainMenu : MonoBehaviour
 		gameObject.SetActive(false);
 	}
 
+	public void OnQuitClick()
+	{
+		Application.Quit();
+	}
+
 	private CarType? GetSelectedCarType()
 	{
 		Toggle selectedToggle = _toggleGroup.ActiveToggles().FirstOrDefault();
