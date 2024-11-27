@@ -16,7 +16,7 @@ public class TrackCheckPoints : MonoBehaviour
 	public event EventHandler OnCorrectCheckPoint;
 	public event EventHandler OnWrongCheckPoint;
 
-	public event Action<int> OnLapPassed;
+	public event Action<int> OnLapUpdate;
 
 	int _nextCheckPointIndex;
 
@@ -29,7 +29,7 @@ public class TrackCheckPoints : MonoBehaviour
 	private void Start()
 	{
 		checkPoints[0].Show();
-		OnLapPassed(_lap);
+		OnLapUpdate(_lap);
 	}
 
 	public void CheckPointTriggered(CheckPoint checkPoint)
@@ -45,7 +45,7 @@ public class TrackCheckPoints : MonoBehaviour
 			{
 				_nextCheckPointIndex = 0;
 				_lap++;
-				OnLapPassed(_lap);
+				OnLapUpdate(_lap);
 
 				if (_lap >= _lapsToWin) _finish.Show();
 			}
@@ -72,6 +72,8 @@ public class TrackCheckPoints : MonoBehaviour
 	public void OnQuitRace()
 	{
 		_nextCheckPointIndex = 0;
+		_lap = 0;
+		OnLapUpdate(_lap);
 	}
 
 	private void OnDestroy()

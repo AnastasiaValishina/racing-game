@@ -12,16 +12,11 @@ public class Game : MonoBehaviour
 	[Inject] DiContainer _diContainer;
 	[Inject] CinemachineVirtualCamera _camera;
 	[Inject] RecordManager _recordManager;
+	[Inject] Canvas _canvas;
 
 	public event Action OnQuitRace;
 
-	Canvas _canvas;
 	Car _car;
-
-	private void Awake()
-	{
-		_canvas = FindObjectOfType<Canvas>();
-	}
 
 	private void Start()
 	{
