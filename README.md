@@ -8,6 +8,7 @@
   <li><strong>Tilemap</strong> environments.</li>
   <li><strong>Timer</strong> to track race duration.</li>
   <li><strong>Checkpoints</strong>.</li>
+  <li>Unique physics for each car.</li>
 </ul>
 
 ![](https://github.com/AnastasiaValishina/racing-game/blob/main/Racing%20Game/Recordings/RacingGame.gif)
