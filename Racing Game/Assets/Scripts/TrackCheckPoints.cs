@@ -23,6 +23,7 @@ public class TrackCheckPoints : MonoBehaviour
 	private void Awake()
 	{
 		_nextCheckPointIndex = 0;
+		_game.OnQuitRace += OnQuitRace;
 	}
 
 	private void Start()
@@ -60,11 +61,21 @@ public class TrackCheckPoints : MonoBehaviour
 		}
 	}
 
-	internal void FinishTriggered()
+	public void FinishTriggered()
 	{
 		if (_lap >= _lapsToWin)
 		{
 			_game.GameOver();
 		}
+	}
+
+	public void OnQuitRace()
+	{
+		_nextCheckPointIndex = 0;
+	}
+
+	private void OnDestroy()
+	{
+		_game.OnQuitRace -= OnQuitRace;
 	}
 }

@@ -5,13 +5,15 @@ using Zenject;
 
 public class Game : MonoBehaviour
 {
-	[SerializeField] ResultPopup _resultPopupPrefab;
+	[SerializeField] GameObject _resultPopupPrefab;
 	[SerializeField] Car[] _cars;
 	
 	[Inject] Timer _timer;
 	[Inject] DiContainer _diContainer;
 	[Inject] CinemachineVirtualCamera _camera;
 	[Inject] RecordManager _recordManager;
+
+	public event Action OnQuitRace;
 
 	Canvas _canvas;
 	Car _car;
@@ -30,7 +32,6 @@ public class Game : MonoBehaviour
 	{
 		_car = Instantiate(_cars[(int)selectedCarType]);
 		_car.Init(_camera);
-		Debug.Log(_car.GetCarType().ToString());
 
 		Time.timeScale = 1;
 		_timer.StartTimer();
@@ -39,19 +40,22 @@ public class Game : MonoBehaviour
 	public void GameOver() 
 	{
 		TimeSpan newResult = _timer.StopTimer();
-
+		
 		string carType = _car.GetCarType().ToString();
-		_recordManager.UpdateBestTime(carType, newResult);
+		TimeSpan bestResult = _recordManager.GetBestResult(carType);
 
-		ResultPopup resultPopup = Instantiate(_resultPopupPrefab, _canvas.transform);
-		resultPopup.SetResultData(newResult, _recordManager.GetBestResult(carType));
+		GameObject resultPopup = _diContainer.InstantiatePrefab(_resultPopupPrefab, _canvas.transform);
+		resultPopup.GetComponent<ResultPopup>().SetResultData(newResult, bestResult);
+
+		_recordManager.UpdateBestTime(carType, newResult);
 
 		Time.timeScale = 0;
 	}
 
 	public void QuitRace()
 	{
-		Destroy(_car);
+		Destroy(_car.gameObject);
 		Time.timeScale = 0;
+		OnQuitRace();
 	}
 }
