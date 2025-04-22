@@ -11,8 +11,8 @@
   <li>Unique physics for each car.</li>
 </ul>
 
-## 🏁 Download build
-[Racing Game Build](https://drive.google.com/file/d/19kdQ_EWtzBhlOE72L6jbLq2sBNTURr3m/view)
+## 🏁 Download build or watch gameplay video
+[Download Racing Game Build](https://drive.google.com/file/d/19kdQ_EWtzBhlOE72L6jbLq2sBNTURr3m/view)
 
 ![](https://github.com/AnastasiaValishina/racing-game/blob/main/Racing%20Game/Recordings/RacingGame.gif)
 
