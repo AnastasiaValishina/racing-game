@@ -12,7 +12,7 @@
 </ul>
 
 ## 🏁 Download build or watch gameplay video
-[Download Racing Game Build](https://drive.google.com/file/d/19kdQ_EWtzBhlOE72L6jbLq2sBNTURr3m/view)
+[Play Racing Game](https://anastasiavalishina.github.io/racing-game-build/)
 
 ![](https://github.com/AnastasiaValishina/racing-game/blob/main/Racing%20Game/Recordings/RacingGame.gif)
 
